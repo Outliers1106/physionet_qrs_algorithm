@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include "qrs_func_assembly.h"
 #include <stdlib.h>
+
 //输入格式
 //wqrs -r 100 -f 0:0 -t 10:0 -s 0
 //rdann -a wqrs -r 100
 
-__declspec(dllexport) int* wqrs_func(int argc1,char** argv1,int argc2,char** argv2){
+extern "C" __declspec(dllexport) int* wqrs_func(int argc1,char** argv1,int argc2,char** argv2){
 	wqrs(argc1,argv1);
 	printf("\n finish wqrs");
 	int* r_inds=rdann(argc2,argv2);
@@ -13,7 +14,7 @@ __declspec(dllexport) int* wqrs_func(int argc1,char** argv1,int argc2,char** arg
 	return r_inds;
 }
 
-__declspec(dllexport) int* sqrs_func(int argc1, char** argv1, int argc2, char** argv2) {
+extern "C" __declspec(dllexport) int* sqrs_func(int argc1, char** argv1, int argc2, char** argv2) {
 	sqrs(argc1, argv1);
 	printf("\n finish sqrs");
 	int* r_inds = rdann(argc2, argv2);
@@ -21,7 +22,7 @@ __declspec(dllexport) int* sqrs_func(int argc1, char** argv1, int argc2, char** 
 	return r_inds;
 }
 
-__declspec(dllexport) int* sqrs125_func(int argc1, char** argv1, int argc2, char** argv2) {
+extern "C" __declspec(dllexport) int* sqrs125_func(int argc1, char** argv1, int argc2, char** argv2) {
 	sqrs125(argc1, argv1);
 	printf("\n finish sqrs125");
 	int* r_inds = rdann(argc2, argv2);

@@ -95,7 +95,7 @@
     <ClCompile Include="Ecg_Asist_Function.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="qrs_func_assembly.c">
+    <ClCompile Include="qrs_func_assembly.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

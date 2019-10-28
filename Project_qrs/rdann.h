@@ -5,7 +5,14 @@ typedef struct node{
 	int data;
 	struct node* next;
 }node;
-__declspec(dllexport) int* rdann(int argc,char** argv);
-char* prog_name_rdann(char* s);
-void help_rdann();
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+	int* rdann(int argc, char** argv);
+	char* prog_name_rdann(char* s);
+	void help_rdann();
+#ifdef __cplusplus
+}
+#endif
 #endif

@@ -39,7 +39,7 @@
     <ClCompile Include="calib.c" />
     <ClCompile Include="EcgAnalysis.cpp" />
     <ClCompile Include="Ecg_Asist_Function.cpp" />
-    <ClCompile Include="qrs_func_assembly.c" />
+    <ClCompile Include="qrs_func_assembly.cpp" />
     <ClCompile Include="rdann.c" />
     <ClCompile Include="signal.c" />
     <ClCompile Include="sqrs.c" />

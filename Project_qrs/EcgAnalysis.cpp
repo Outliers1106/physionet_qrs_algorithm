@@ -9,7 +9,6 @@
 #include "Ecg_Asist_Function.h"
 
 using namespace std;
-
 EcgAnalysis::EcgAnalysis(string filepath, string output_dir)
 {
    //--------------------------------Reading----------------------------------//
