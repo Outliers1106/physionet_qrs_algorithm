@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="qrs_func_assembly.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rdann.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wqrs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ecgmap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wfdb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ecgcodes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wfdblib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sqrs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sqrs125.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EcgAnalysis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stringutils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Calcu_Parm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ecg_Asist_Function.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="rdann.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wqrs.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="annot.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="calib.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="signal.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wfdbinit.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wfdbio.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sqrs.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sqrs125.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EcgAnalysis.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stringutils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Calcu_Parm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ecg_Asist_Function.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="qrs_func_assembly.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
