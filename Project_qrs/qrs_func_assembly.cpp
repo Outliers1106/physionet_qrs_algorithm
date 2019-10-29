@@ -29,13 +29,14 @@ extern "C" __declspec(dllexport) int* sqrs125_func(int argc1, char** argv1, int 
 	printf("\n finish rdann");
 	return r_inds;
 }
-/*
-__declspec(dllexport) void EcgAnalysis_func() {
-	string filepath = "100";
-	string output_dir = "mit - bih - arrhythmia - database - 1.0.0";
-	EcgAnalysis ecg = new EcgAnalysis(filepath,output_dir);
+
+extern "C" __declspec(dllexport) void EcgAnalysis_func(char* filepathChars) {
+	//这里的filepath用ecg数据名即可
+	string filepath = filepathChars;
+	string output_dir = "mit-bih-arrhythmia-database-1.0.0";
+	EcgAnalysis(filepath,output_dir);
 }
-*/
+
 /*
 __declspec(dllexport) int wqrs_func(int a,int b) {
 	

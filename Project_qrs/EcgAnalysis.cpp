@@ -13,11 +13,13 @@ EcgAnalysis::EcgAnalysis(string filepath, string output_dir)
 {
    //--------------------------------Reading----------------------------------//
     printf("\nEcg signals reading begin....\n");
-    const int nsig = 1;
-    WFDB_Sample sample[nsig];
-    WFDB_Siginfo siginfo[nsig];
+    int nsig;
 
     char* filepathChars = stringToChars(filepath);
+	if ((nsig = isigopen(filepathChars, NULL, 0)) < 1) return;
+	WFDB_Siginfo* siginfo = (WFDB_Siginfo*)malloc(sizeof(WFDB_Siginfo)*nsig);
+	WFDB_Sample* sample = (WFDB_Sample*)malloc(sizeof(WFDB_Sample)*nsig);
+
     // init global variables
     fs = (int)sampfreq(filepathChars);
     window = fs/10;
@@ -28,10 +30,11 @@ EcgAnalysis::EcgAnalysis(string filepath, string output_dir)
         delete[] filepathChars;
         return;
     }
+	printf("\n isigopne done \n");
     delete[] filepathChars;
 
     NumPoint = siginfo[0].nsamp;
-
+	delete[] siginfo;
     // if the record is too short
     // just return
     if(NumPoint < fs * minDuration){
@@ -324,6 +327,8 @@ EcgAnalysis::EcgAnalysis(string filepath, string output_dir)
      printf("Ecg signals detecting finished!\n");
 
      printf("Detecting cost time：%lfs\n", (time_End_Detecting - time_Start_Detecting)/1000.0);
+
+	 
 }
 
 void filter(int ord, double *a, double *b, int np, double *x, double *y)
@@ -362,7 +367,7 @@ void filter(int ord, double *a, double *b, int np, double *x, double *y)
 }
 
 EcgAnalysis::~EcgAnalysis(){
-
+	
     delete[] ECGArrayLead1;
     delete[] ECGArrayLead2;
 
@@ -387,6 +392,7 @@ EcgAnalysis::~EcgAnalysis(){
     delete[] QQIntervals;        //Intervals of QQ
     delete[] PPIntervals;        //Intervals of PP
     delete[] TTIntervals;        //Intervals of TT
+	
 }
 
 

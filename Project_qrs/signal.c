@@ -916,15 +916,19 @@ static int readheader(const char *record)
 	if (*q == '.') {
 		if ((hheader = wfdb_open(NULL, record, WFDB_READ)) == NULL) {
 			wfdb_error("init: can't open %s\n", record);
+			printf("\n try to figure out 1\n");
 			return (-1);
 		}
-		else if (strcmp(q + 1, "hea"))	/* assume EDF if suffix is not '.hea' */
+		else if (strcmp(q + 1, "hea")) {	/* assume EDF if suffix is not '.hea' */
+			printf("\n try to figure out 2\n");
 			return (edfparse(hheader));
+		}
 	}
 
 	/* Otherwise, assume the file name is record.hea. */
 	else if ((hheader = wfdb_open("hea", record, WFDB_READ)) == NULL) {
 		wfdb_error("init: can't open header for record %s\n", record);
+		printf("\n try to figure out 3\n");
 		return (-1);
 	}
 	printf("\n readheader flag");
@@ -2144,13 +2148,13 @@ FINT isigopen(char *record, WFDB_Siginfo *siarray, int nsig)
 	/* Close previously opened input signals unless otherwise requested. */
 	if (*record == '+') record++;
 	else isigclose();
-	printf("flag-isigopen");
+	printf("\nflag-isigopen");
 	/* Remove trailing .hea, if any, from record name. */
 	wfdb_striphea(record);
-	printf("flag-isigopen");
+	printf("\nflag-isigopen");
 	/* Save the current record name. */
 	if (!in_msrec) wfdb_setirec(record);
-	printf("flag-isigopen");
+	printf("\n isigopen record:%s", record);
 	//这里卡住了
 	/* Read the header and determine how many signals are available. */
 	if ((navail = readheader(record)) <= 0) {

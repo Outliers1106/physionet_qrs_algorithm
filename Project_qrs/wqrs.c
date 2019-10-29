@@ -253,12 +253,12 @@ void wqrs(int argc, char** argv)
     setgvmode(gvmode | WFDB_GVPAD);
 	//到这里卡住了
     if ((nsig = isigopen(record, NULL, 0)) < 1) return;
-	printf("flag");
+	printf("\n wqrs isigopen 1 \n");
     if ((s = (WFDB_Siginfo*)malloc(nsig * sizeof(WFDB_Siginfo))) == NULL) {
         (void)fprintf(stderr, "%s: insufficient memory\n", pname);
         return;
     }
-	
+	printf("\nrecord :%s\n", record);
     if ((nsig = isigopen(record, s, nsig)) < 1) return;
     sps = sampfreq((char*)NULL);
 	

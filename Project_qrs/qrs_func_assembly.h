@@ -12,8 +12,9 @@ extern "C" __declspec(dllexport) int* wqrs_func(int argc1,char** argv1,int argc2
 #include "rdann.h"
 #include "sqrs.h"
 #include "sqrs125.h"
-//__declspec(dllexport) int wqrs_func(int a,int b);
+#include "EcgAnalysis.h"
 extern "C" __declspec(dllexport) int* wqrs_func(int argc1, char** argv1, int argc2, char** argv2);
 extern "C" __declspec(dllexport) int* sqrs_func(int argc1, char** argv1, int argc2, char** argv2);
 extern "C" __declspec(dllexport) int* sqrs125_func(int argc1, char** argv1, int argc2, char** argv2);
+extern "C" __declspec(dllexport) void EcgAnalysis_func(char* filepathChars);
 #endif
