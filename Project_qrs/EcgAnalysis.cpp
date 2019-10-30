@@ -9,7 +9,7 @@
 #include "Ecg_Asist_Function.h"
 
 using namespace std;
-EcgAnalysis::EcgAnalysis(string filepath, string output_dir)
+EcgAnalysis::EcgAnalysis(string filepath, string output_dir,int sampfrom,int sampto)
 {
    //--------------------------------Reading----------------------------------//
     printf("\nEcg signals reading begin....\n");
@@ -33,7 +33,8 @@ EcgAnalysis::EcgAnalysis(string filepath, string output_dir)
 	printf("\n isigopne done \n");
     delete[] filepathChars;
 
-    NumPoint = siginfo[0].nsamp;
+    //NumPoint = siginfo[0].nsamp;
+	NumPoint = sampto;
 	delete[] siginfo;
     // if the record is too short
     // just return
@@ -56,6 +57,11 @@ EcgAnalysis::EcgAnalysis(string filepath, string output_dir)
         }
         //printf("%d %lf",i, ECGArrayLead1[i]);
     }
+
+	//将不在范围内的数据置零
+	for (int i = 0; i < sampfrom; i++) {
+		ECGArrayLead1[i] = 0;
+	}
 
    //--------------------------------Denoising----------------------------------//
    printf("Ecg signals denosing begin....\n");

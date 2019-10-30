@@ -30,11 +30,11 @@ extern "C" __declspec(dllexport) int* sqrs125_func(int argc1, char** argv1, int 
 	return r_inds;
 }
 
-extern "C" __declspec(dllexport) void EcgAnalysis_func(char* filepathChars) {
+extern "C" __declspec(dllexport) void EcgAnalysis_func(char* filepathChars,int sampfrom,int sampto) {
 	//这里的filepath用ecg数据名即可
 	string filepath = filepathChars;
 	string output_dir = "mit-bih-arrhythmia-database-1.0.0";
-	EcgAnalysis(filepath,output_dir);
+	EcgAnalysis(filepath,output_dir,sampfrom,sampto);
 }
 
 /*

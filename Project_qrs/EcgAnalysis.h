@@ -13,7 +13,7 @@ class EcgAnalysis
 {
 
 public:
-    EcgAnalysis(string filepath, string output_dir);
+    EcgAnalysis(string filepath, string output_dir,int sampfrom,int sampto);
     ~EcgAnalysis();
 
 public:
