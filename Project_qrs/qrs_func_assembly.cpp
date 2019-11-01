@@ -35,6 +35,7 @@ extern "C" __declspec(dllexport) void EcgAnalysis_func(char* filepathChars,int s
 	string filepath = filepathChars;
 	string output_dir = "mit-bih-arrhythmia-database-1.0.0";
 	EcgAnalysis(filepath,output_dir,sampfrom,sampto);
+	system("get_hrv.sh -R mit-bih-arrhythmia-database-1.0.0/RRIntervals.txt");
 }
 
 /*
