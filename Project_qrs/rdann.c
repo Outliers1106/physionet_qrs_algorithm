@@ -331,7 +331,13 @@ int* rdann(int argc, char** argv)
         if (bto && isqrs(annot.anntyp) && ++bnum >= bto) break;
     }
 //2019.10.20¡ý
+	if (i == 0) {
+		r_inds = (int*)malloc(sizeof(int) * 1);
+		r_inds[0] = -1;
+		return r_inds;
+	}
     len = pre->index;
+	if(len)
     r_inds = (int*)malloc(sizeof(int) * (len+1));
     r_inds[0] = len;
     i = 1;
