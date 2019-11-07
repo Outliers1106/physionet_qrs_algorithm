@@ -335,6 +335,7 @@ int* rdann(int argc, char** argv)
 		r_inds = (int*)malloc(sizeof(int) * 1);
 		r_inds[0] = -1;
 		return r_inds;
+		//如果一个qrs都没找到，提示错误	
 	}
     len = pre->index;
 	if(len)

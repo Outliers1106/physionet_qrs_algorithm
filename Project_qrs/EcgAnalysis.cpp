@@ -38,10 +38,12 @@ EcgAnalysis::EcgAnalysis(string filepath, string output_dir,int sampfrom,int sam
 	delete[] siginfo;
     // if the record is too short
     // just return
+	/*
     if(NumPoint < fs * minDuration){
         printf("The record is too short.\n");
         return;
     }
+	*/
 
 
     ECGArrayLead1 = new double[NumPoint];
