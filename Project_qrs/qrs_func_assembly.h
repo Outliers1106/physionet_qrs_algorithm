@@ -16,5 +16,5 @@ extern "C" __declspec(dllexport) int* wqrs_func(int argc1,char** argv1,int argc2
 extern "C" __declspec(dllexport) int* wqrs_func(int argc1, char** argv1, int argc2, char** argv2);
 extern "C" __declspec(dllexport) int* sqrs_func(int argc1, char** argv1, int argc2, char** argv2);
 extern "C" __declspec(dllexport) int* sqrs125_func(int argc1, char** argv1, int argc2, char** argv2);
-extern "C" __declspec(dllexport) void EcgAnalysis_func(char* filepathChars,int sampfrom,int sampto);
+extern "C" __declspec(dllexport) void EcgAnalysis_func(char* filepathChars,int sampfrom,int sampto,bool flag);
 #endif
