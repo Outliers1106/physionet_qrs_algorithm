@@ -628,12 +628,13 @@ double* TWavdetection(double* ECG,double *QRSs)
             }
         }
     }
-
+	
     delete[] _ECGs;
     delete[] beat_times;
+	/*
     delete[] TRegions;
     delete[] TFlags;
-
+	*/
     return TWavs;
 }
 

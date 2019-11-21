@@ -35,7 +35,8 @@ EcgAnalysis::EcgAnalysis(string filepath, string output_dir,int sampfrom,int sam
 
     //NumPoint = siginfo[0].nsamp;
 	NumPoint = sampto;
-	delete[] siginfo;
+	//delete[] siginfo;
+	free(siginfo);
     // if the record is too short
     // just return
 	/*
